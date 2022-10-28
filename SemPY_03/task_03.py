@@ -14,8 +14,11 @@ os.system('clear')
 #         res_list.append(round(i % 1, 2))
 # print(list_num, '=>', max(res_list) - min(res_list), end='\n\n')
 
+# Ваше решение, которое я немного доработал:
 
 lst = [1.1, 1.2, 3.1, 5, 10.01]
-lst = [round(val % 1, 2) for val in lst if not val%1 == 0]
-rev_result = max(lst) - min(lst)
-print(rev_result)
+
+# пришлось добавить условие 'if not val%1 == 0' т.к. не совсем корректно работала программа приналичии целых чисел в списке
+res = [round(val % 1, 2) for val in lst if not val%1 == 0]
+print(lst, '=>', max(res) - min(res))
+
